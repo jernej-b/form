@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Jeanne d’Arc Feedback Form</title>
+    <link rel="stylesheet" href="styles1.css">
+	<link rel="icon" href="favicon.png" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&display=swap" rel="stylesheet">
+
+</head>
+	<body>
+		<div class="container">
+			<form class="feedback-form">
+				
+				<a href="https://hoteljeannedarc.com/" target="_blank"><img src="logo2.svg" alt="Hotel Logo" class="logo-image"></a>
+				<hr class="hr-class">
+				<h2 >Feedback Form</h2>
+				<div class="form-group horizontal-group">
+					<div class="field">
+						<label for="first-name">First Name:</label>
+						<input type="text" id="first-name" class="inputText" placeholder="First Name" required>
+					</div>
+					<div class="field">
+						<label for="last-name">Last Name:</label>
+						<input type="text" id="last-name" class="inputText" placeholder="Last Name" required>
+					</div>
+				</div>
+				
+				<div class="form-group horizontal-group">
+					<div class="field">
+						<label for="phone">Phone Number:</label>
+						<input type="tel" id="phone" class="inputTel" placeholder="123-456-789" required pattern="\d{3}-\d{3}-\d{3}" >
+					</div>
+					<div class="field">
+						<label for="email">Email:</label>
+						<input type="email" id="email" class="inputText" placeholder="example@example.com" required>
+					</div>
+				</div>
+				
+				<div class="form-group horizontal-group">
+					<div class="field">
+						<label for="checkin-date">Check-in Date:</label>
+						<input type="date" id="checkin-date" class="inputTel" required>
+					</div>
+					<div class="field">
+						<label for="checkout-date">Check-out Date:</label>
+						<input type="date" id="checkout-date" class="inputTel" required>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<p>How did you hear about our hotel?</p>
+					<label><input type="radio" name="source" value="friends" onclick="hideOtherField('source')"> Friends and family</label>
+					<label><input type="radio" name="source" value="social" onclick="hideOtherField('source')"> Social media</label>
+					<label><input type="radio" name="source" value="ads" onclick="hideOtherField('source')"> Ads</label>
+					<label><input type="radio" name="source" value="other" id="sourceOther" onclick="showOtherField('source')"> Other</label>
+					<input type="text" id="sourceOtherText" class="inputText" placeholder="Please specify..." style="display:none;">
+				</div>
+
+				<div class="form-group">
+					<p>How did you make your reservation?</p>
+					<label><input type="radio" name="reservation" value="agency" onclick="hideOtherField('reservation')"> Travel Agency</label>
+					<label><input type="radio" name="reservation" value="online" onclick="hideOtherField('reservation')"> Online</label>
+					<label><input type="radio" name="reservation" value="other" id="reservationOther" onclick="showOtherField('reservation')"> Other</label>
+					<input type="text" id="reservationOtherText" class="inputText" placeholder="Please specify..." style="display:none;">
+				</div>
+
+				<div class="form-group">
+					<p>What was the purpose of your visit?</p>
+					<label><input type="radio" name="purpose" value="vacation" onclick="hideOtherField('purpose')"> Vacation</label>
+					<label><input type="radio" name="purpose" value="wedding" onclick="hideOtherField('purpose')"> Wedding</label>
+					<label><input type="radio" name="purpose" value="business" onclick="hideOtherField('purpose')"> Business</label>
+					<label><input type="radio" name="purpose" value="other" id="purposeOther" onclick="showOtherField('purpose')"> Other</label>
+					<input type="text" id="purposeOtherText" class="inputText" placeholder="Please specify..." style="display:none;">
+				</div>
+
+				<div class="form-group">
+					<p>How would you rate these:</p>
+					<table>
+						<tr>
+							<th></th>
+							<th>Poor</th>
+							<th>Satisfactory</th>
+							<th>Good</th>
+							<th>Very Good</th>
+							<th>Excellent</th>
+						</tr>
+						<tr>
+							<td>Service Quality</td>
+							<td><input type="radio" name="service" value="1"></td>
+							<td><input type="radio" name="service" value="2"></td>
+							<td><input type="radio" name="service" value="3"></td>
+							<td><input type="radio" name="service" value="4"></td>
+							<td><input type="radio" name="service" value="5"></td>
+						</tr>
+						<tr>
+							<td>Cleanliness</td>
+							<td><input type="radio" name="cleanliness" value="1"></td>
+							<td><input type="radio" name="cleanliness" value="2"></td>
+							<td><input type="radio" name="cleanliness" value="3"></td>
+							<td><input type="radio" name="cleanliness" value="4"></td>
+							<td><input type="radio" name="cleanliness" value="5"></td>
+						</tr>
+						<tr>
+							<td>Food</td>
+							<td><input type="radio" name="food" value="1"></td>
+							<td><input type="radio" name="food" value="2"></td>
+							<td><input type="radio" name="food" value="3"></td>
+							<td><input type="radio" name="food" value="4"></td>
+							<td><input type="radio" name="food" value="5"></td>
+						</tr>
+						<tr>
+							<td>Staff</td>
+							<td><input type="radio" name="staff" value="1"></td>
+							<td><input type="radio" name="staff" value="2"></td>
+							<td><input type="radio" name="staff" value="3"></td>
+							<td><input type="radio" name="staff" value="4"></td>
+							<td><input type="radio" name="staff" value="5"></td>
+						</tr>
+					</table>
+				</div>
+
+			<div class="form-group">
+				<p>Overall experience in our hotel:</p>
+				<div class="star-rating">
+					<input type="radio" id="star5" name="rating" value="5">
+					<label for="star5" title="5 stars">★</label>
+					
+					<input type="radio" id="star4" name="rating" value="4">
+					<label for="star4" title="4 stars">★</label>
+					
+					<input type="radio" id="star3" name="rating" value="3">
+					<label for="star3" title="3 stars">★</label>
+					
+					<input type="radio" id="star2" name="rating" value="2">
+					<label for="star2" title="2 stars">★</label>
+					
+					<input type="radio" id="star1" name="rating" value="1">
+					<label for="star1" title="1 star">★</label>
+				</div>
+			</div>
+
+		<div class="form-group">
+					<label for="suggestions">Any other suggestions for us?</label>
+					<textarea id="suggestions" class="inputText" placeholder="Type here..."></textarea>
+				</div>
+		<hr class="hr-class">
+				<div class="form-group">
+					<button type="submit">Submit</button>
+				</div>
+			</form>
+		</div>
+		
+		<span class="tooltip-container">
+    <button type="button" aria-label="More info" data-toggletip-content="Jernej Brodar 4.ra">i</button>
+    <span role="status" aria-live="polite"></span>
+  </span>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+		<script src="script.js"></script>
+	</body>
+</html>
